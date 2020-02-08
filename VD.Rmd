@@ -102,11 +102,9 @@ for( skill in technical_skills )
   text_line = paste( style_11 , skill[1], sep = "" )
   text_line = paste( text_line, style_12, sep = "" )
   text_line = paste( text_line, skill[2], sep = "" )
-  text_line = paste( text_line, style_13, sep = "" )
-  text_line = paste( text_line, skill[3], sep = "" )
   
   cat( text_line )
-  cat( "_\n" )
+  cat( "\n" )
 }
 
 ```
@@ -201,6 +199,7 @@ for( row in projects )
 ```
 
 # `r section_6`
+
 ```{r results='asis', echo=FALSE}
 
 if( language == "english" )
