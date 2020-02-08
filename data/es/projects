@@ -1,0 +1,6 @@
+sp-feedforward-neuralnetworks;;https://sp-ffneuralnetwork.firebaseapp.com/Examples;;Junio 2016 - Septiembre 2017;;Visualizador y tester de redes neuronales feedforward usando Vue.js, d3, mathjs y firebase.
+SPANN / RSPANN;;https://gitlab.com/cesandovalp/SPANN;;2015 - 2018;;Library de redes neuronales artificiales en C++ y paquete de R usando Rcpp. La librería tiene algunos modelos de redes neuronales artificiales yd funcionalidades para experimentar.
+SPGO / RSPGO;;https://gitlab.com/cesandovalp/SPGO;;2014 - 2018;;Librería de optimización en C++ y paquete de R. La librería tiene estructuras y algoritmos de varios métodos de optimización.
+RNeuroEvolution;;https://gitlab.com/cesandovalp/RNeuroEvolution;;2017 - 2018;;Paquete R que contiene algunas estrategias de neuroevolución y herramientas de visualización de datos.
+RTimeSeriesPE;;https://gitlab.com/cesandovalp/SPPE;;2015 - 2016;;Paquete R para estimación de parametros en los modelos ARMA - ARIMA usando tecnicas de computación evolutiva.
+Viviendo-Nuestro-Rock;;https://testapp-8e372.firebaseapp.com/;;Diciembre 2017;;Web app desarrollada para la hackatón ”BibloRock: una historia 3.0 de Rock al parque” (Diciembre 13 y 14 2017).

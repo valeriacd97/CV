@@ -1,0 +1,215 @@
+---
+name: Valeria Carolina Delgado Navarrete
+aboutme: Ecóloga 
+phone: +57 3213001343
+email: "valeriacd97@gmail.com"
+linkedin: valeria97
+headcolor: 414141
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv
+---
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+
+language = "english"
+language = "español"
+
+section_1_en = "Qualifications and research interests"
+section_2_en = "Technical Skills"
+section_3_en = "Education"
+section_4_en = "Experience"
+section_5_en = "Personal projects"
+section_6_en = "References"
+
+section_1_es = "Sobre mí"
+section_2_es = "Habilidades técnicas"
+section_3_es = "Educación"
+section_4_es = "Experiencia"
+section_5_es = "Proyectos"
+section_6_es = "Referencias"
+
+language_path = "en"
+
+if( language == "english" )
+{
+  section_1 = section_1_en
+  section_2 = section_2_en
+  section_3 = section_3_en
+  section_4 = section_4_en
+  section_5 = section_5_en
+  section_6 = section_6_en
+
+  language_path = "en"
+}
+if( language == "español" )
+{
+  section_1 = section_1_es
+  section_2 = section_2_es
+  section_3 = section_3_es
+  section_4 = section_4_es
+  section_5 = section_5_es
+  section_6 = section_6_es
+  
+  language_path = "es"
+}
+
+style_11 = " - **<span style=\"font-size:1em;\">"
+style_12 = ":</span>**  "
+style_13 = " \\hfill _"
+style_21 = "**<span style=\"font-size:1em;\">"
+style_22 = "</span>**"
+style_23 = " \\hfill _"
+style_24 = "_\\\n"
+style_25 = " **"
+style_31 = "**<span style=\"font-size:1em;\">"
+style_32 = "</span>**"
+style_33 = " \\hfill "
+style_34 = "_"
+style_41 = "[**"
+style_42 = "**]("
+style_43 = ") \\hfill "
+style_44 = "_"
+
+```
+
+# `r section_1`
+
+```{r results='asis', echo=FALSE}
+
+data_path      = paste( "./data/", language_path, "/qualifications", sep = "" )
+qualifications = readLines( data_path )
+
+cat( qualifications )
+
+```
+
+# `r section_2`
+
+```{r results='asis', echo=FALSE}
+
+data_path        = paste( "./data/", language_path, "/technical_skills", sep = "" )
+technical_skills = readLines( data_path )
+
+for( skill in technical_skills )
+{
+  skill = unlist( strsplit( skill, split = ";;" ) )
+  
+  text_line = paste( style_11 , skill[1], sep = "" )
+  text_line = paste( text_line, style_12, sep = "" )
+  text_line = paste( text_line, skill[2], sep = "" )
+  text_line = paste( text_line, style_13, sep = "" )
+  text_line = paste( text_line, skill[3], sep = "" )
+  
+  cat( text_line )
+  cat( "_\n" )
+}
+
+```
+
+
+# `r section_3`
+
+```{r results='asis', echo=FALSE}
+
+data_path = paste( "./data/", language_path, "/education", sep = "" )
+education = readLines( data_path )
+
+for( row in education )
+{
+  row = unlist( strsplit( row, split = ";;" ) )
+  
+  text_line = row[1]
+  text_line = paste( style_21 , text_line, sep = "" )
+  text_line = paste( text_line, style_22 , sep = "" )
+  text_line = paste( text_line, style_23 , sep = "" )
+  text_line = paste( text_line, row[2]   , sep = "" )
+  text_line = paste( text_line, style_24 , sep = "" )
+  text_line = paste( text_line, row[3]   , sep = "" )
+  text_line = paste( text_line, style_25 , sep = "" )
+  text_line = paste( text_line, row[4]   , sep = "" )
+  text_line = paste( text_line, style_25 , sep = "" )
+  
+  cat( text_line )
+  cat( "\n\n" )
+}
+
+```
+
+
+# `r section_4`
+
+```{r results='asis', echo=FALSE}
+
+data_path  = paste( "./data/", language_path, "/experience", sep = "" )
+experience = readLines( data_path )
+
+for( job_ in experience )
+{
+  if( length( grep( "^ - .*", job_ ) ) > 0 )
+  {
+    cat( job_ )
+    cat( "\n" )
+  } else
+  {
+    job_ = unlist( strsplit( job_, ";;" ) )
+
+    text_line_1 = paste( style_31   , job_[1] , sep = "" )
+    text_line_1 = paste( text_line_1, style_32, sep = "" )
+    text_line_2 = paste( job_[2]    , style_33, sep = "" )
+    text_line_2 = paste( text_line_2, style_34, sep = "" )
+    text_line_2 = paste( text_line_2, job_[3] , sep = "" )
+    text_line_2 = paste( text_line_2, style_34, sep = "" )
+    
+    cat( "\n"        )
+    cat( text_line_1 )
+    cat( "\n\n"      )
+    cat( text_line_2 )
+    cat( "\n\n"      )
+  }
+}
+
+```
+
+# `r section_5`
+
+```{r results='asis', echo=FALSE}
+
+data_path = paste( "./data/", language_path, "/extracurricular_activities", sep = "" )
+projects  = readLines( data_path )
+
+for( row in projects )
+{
+  row = unlist( strsplit( row, split = ";;" ) )
+  
+  text_line = row[1]
+  text_line = paste( style_21 , text_line, sep = "" )
+  text_line = paste( text_line, style_22 , sep = "" )
+  text_line = paste( text_line, style_23 , sep = "" )
+  text_line = paste( text_line, row[3]   , sep = "" )
+  text_line = paste( text_line, style_24 , sep = "" )
+  text_line = paste( text_line, row[2]   , sep = "" )
+  
+  cat( text_line )
+  cat( "\n\n" )
+}
+
+```
+
+# `r section_6`
+```{r results='asis', echo=FALSE}
+
+if( language == "english" )
+{
+  cat( "References will be provided upon request." )
+}
+if( language == "español" )
+{
+  cat( "Se proporcionarán referencias a pedido." )
+}
+
+```
