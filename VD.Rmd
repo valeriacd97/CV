@@ -30,7 +30,7 @@ section_1_es = "Sobre mí"
 section_2_es = "Habilidades técnicas"
 section_3_es = "Educación"
 section_4_es = "Experiencia"
-section_5_es = "Proyectos"
+section_5_es = "Actividades Complementarias"
 section_6_es = "Referencias"
 
 language_path = "en"
