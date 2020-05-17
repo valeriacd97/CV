@@ -81,7 +81,7 @@ style_44 = "_"
 
 ```{r results='asis', echo=FALSE}
 
-data_path      = paste( "./data/", language_path, "/qualifications", sep = "" )
+data_path      = paste( "./datos/", language_path, "/qualifications", sep = "" )
 qualifications = readLines( data_path )
 
 cat( qualifications )
@@ -92,7 +92,7 @@ cat( qualifications )
 
 ```{r results='asis', echo=FALSE}
 
-data_path        = paste( "./data/", language_path, "/technical_skills", sep = "" )
+data_path        = paste( "./datos/", language_path, "/technical_skills", sep = "" )
 technical_skills = readLines( data_path )
 
 for( skill in technical_skills )
@@ -114,7 +114,7 @@ for( skill in technical_skills )
 
 ```{r results='asis', echo=FALSE}
 
-data_path = paste( "./data/", language_path, "/education", sep = "" )
+data_path = paste( "./datos/", language_path, "/education", sep = "" )
 education = readLines( data_path )
 
 for( row in education )
@@ -143,7 +143,7 @@ for( row in education )
 
 ```{r results='asis', echo=FALSE}
 
-data_path  = paste( "./data/", language_path, "/experience", sep = "" )
+data_path  = paste( "./datos/", language_path, "/experience", sep = "" )
 experience = readLines( data_path )
 
 for( job_ in experience )
@@ -177,7 +177,7 @@ for( job_ in experience )
 
 ```{r results='asis', echo=FALSE}
 
-data_path = paste( "./data/", language_path, "/extracurricular_activities", sep = "" )
+data_path = paste( "./datos/", language_path, "/extracurricular_activities", sep = "" )
 projects  = readLines( data_path )
 
 for( row in projects )
