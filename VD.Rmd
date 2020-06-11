@@ -198,17 +198,30 @@ for( row in projects )
 
 ```
 
+\newpage
+
 # `r section_6`
 
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE }
 
-if( language == "english" )
+data_path = paste( "./datos/", language_path, "/contacts", sep = "" )
+projects  = readLines( data_path )
+projects  = gsub( "---", "\n\n", projects )
+
+for( row in projects )
 {
-  cat( "References will be provided upon request." )
-}
-if( language == "español" )
-{
-  cat( "Se proporcionarán referencias a pedido." )
+  row = unlist( strsplit( row, split = ";;" ) )
+  
+  text_line = row[1]
+  text_line = paste( "__" , text_line, sep = "" )
+  text_line = paste( "\\center ", text_line , sep = "" )
+  text_line = paste( text_line , "__"  , sep = "" )
+  #text_line = paste( text_line , "\\center", sep = "" )
+  text_line = paste( text_line , row[2]    , sep = "\n\n" )
+  text_line = paste( text_line , row[3]    , sep = "\n\n" )
+  
+  cat( text_line )
+  cat( "\n\n" )
 }
 
 ```
