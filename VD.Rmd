@@ -198,8 +198,6 @@ for( row in projects )
 
 ```
 
-\newpage
-
 # `r section_6`
 
 ```{r results='asis', echo=FALSE }
